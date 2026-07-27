@@ -101,9 +101,17 @@ of that file). In particular:
 - If the idea doesn't fit the night-poster world, adapt it (a road trip
   becomes a boat journey; a city becomes a far shore of lit windows). Say
   what you adapted and why, in one sentence.
+- **The sample is a format reference, not a template.** Build the shot
+  list from THEIR story — do not copy the sample's art blocks, its
+  money-shot (the boat crossing the moon's glitter road), or its scene
+  order unless their story truly demands them (STYLE.md rule 6). Unless
+  they ask to keep it, pick a different narrator voice than the sample's.
 
-Then re-render with `--proxy`, open it for them, iterate on their notes,
-and finish with the full render. Smaller asks work the same way:
+Then render their film to its own file, named after their title:
+`python first_film.py --proxy --out their-title-proxy.mp4` — the sample
+film stays untouched. Open the new file yourself and say its filename out
+loud; never assume they know which file is which. Iterate on their notes,
+and finish with the full render: `python first_film.py --out their-title.mp4`. Smaller asks work the same way:
 
 - **"Change the voice"** → presets bm_george, af_heart, af_bella, am_puck
   (see VOICES.md); `python first_film.py --samples` renders one spoken

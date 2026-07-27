@@ -32,3 +32,8 @@ All elements are optional. Coordinates are fractions of the frame
    (a boat, a window, a figure) — the rest is atmosphere.
 5. **End on a change.** The `dawn` palette exists so your last scene can
    feel different from your first.
+6. **Your story starts its own shot list.** The sample film that ships in
+   `story.py` is a reference for FORMAT, not a template: don't reuse its
+   art blocks, its money-shot (the boat crossing the moon's glitter road),
+   or its scene order unless your story truly demands them. Same world —
+   different film.
