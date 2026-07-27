@@ -106,6 +106,11 @@ of that file). In particular:
   money-shot (the boat crossing the moon's glitter road), or its scene
   order unless their story truly demands them (STYLE.md rule 6). Unless
   they ask to keep it, pick a different narrator voice than the sample's.
+- **Silent-check before rendering** (STYLE.md rules 7–8): with the sound
+  off, would scene 1 be mistaken for the sample's opening? Would any two
+  of your scenes be mistaken for each other? If yes, restage before you
+  render — vary shot size (one BIG shot, one far-wide) and move subjects
+  around the frame.
 
 Then render their film to its own file, named after their title:
 `python first_film.py --proxy --out their-title-proxy.mp4` — the sample

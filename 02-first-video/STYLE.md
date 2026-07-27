@@ -37,3 +37,12 @@ All elements are optional. Coordinates are fractions of the frame
    art blocks, its money-shot (the boat crossing the moon's glitter road),
    or its scene order unless your story truly demands them. Same world —
    different film.
+7. **Open on YOUR first image.** The first scene may not reuse the
+   sample's opening (cabin on the left hill under a top-right moon).
+   Start where THEIR story starts — a face-height figure, a huge low
+   moon, a far shore, an empty crossing.
+8. **Vary the frame.** No two of your scenes should share a composition.
+   Change shot size and who carries the frame: at least one BIG shot
+   (a large low moon `r >= 0.055`, or a boat/cabin at `scale >= 1.4`)
+   and one far-wide (subject `scale <= 0.7`). If two scenes would look
+   the same with the sound off, restage one.
