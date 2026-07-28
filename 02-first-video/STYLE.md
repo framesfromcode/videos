@@ -1,8 +1,9 @@
-# The locked style: "night poster" — every knob
+# The starter style: "night poster" — every knob
 
-Your film is drawn in ONE visual style: a quiet, poster-flat night world in
-a 2.35:1 letterbox film frame. You don't pick a style — you pick what's in
-the frame. Everything below goes in a scene's `"art"` dict in `story.py`.
+Your film starts in one visual style: a quiet, poster-flat night world in
+a 2.35:1 letterbox film frame. Everything below goes in a scene's `"art"`
+dict in `story.py` — and when your story needs something this list can't
+draw, the world can be extended (see "Extending the world" below).
 
 All elements are optional. Coordinates are fractions of the frame
 (x: 0 = left, 1 = right · y: 0 = top, 1 = bottom).
@@ -46,3 +47,25 @@ All elements are optional. Coordinates are fractions of the frame
    (a large low moon `r >= 0.055`, or a boat/cabin at `scale >= 1.4`)
    and one far-wide (subject `scale <= 0.7`). If two scenes would look
    the same with the sound off, restage one.
+
+## Extending the world (for Claude)
+
+When the story needs an element this world can't draw — a train, a
+skyline, snow, a kite — write it into `first_film.py` as a new element
+function, and keep the style's DNA so the film still feels whole:
+
+- **Flat poster shapes**: silhouettes and simple polygons, no outlines,
+  no gradients except soft glows around light sources.
+- **Few values**: an element is 2–4 flat colors from the scene palette —
+  dark shape, darker shadow, one warm light if it has windows or a lamp.
+- **Night first**: everything reads as silhouette against sky or water;
+  warm light (windows, lanterns, a firebox) is what draws the eye.
+- **Small motion**: one slow, steady movement per element (drift, smoke,
+  a wheel's turn) — this world never hurries.
+- **Test a still first**: render one frame of the new element and look at
+  it before rendering the film. If it doesn't read in one second,
+  simplify it.
+
+Wire the new element through the same `"art"` dict pattern as the others,
+with `x / y / scale` knobs, so the human can restage it by editing
+`story.py` alone.

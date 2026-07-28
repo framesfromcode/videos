@@ -120,13 +120,13 @@ def page_cover() -> Image.Image:
     cursor_block(d, M + w1 + w2 + d.textlength("code", font=f_mark) + 14,
                  M + 6, 40)
     # title
-    y = 330
+    y = 270
     for ln, col in [("RENDER", INK), ("YOUR FIRST", INK), ("FILM", GREEN)]:
-        f_t = F(ARCHIVO, 150)
+        f_t = F(ARCHIVO, 128)
         d.text((M, y), ln, font=f_t, fill=col)
-        y += 172
-    y += 30
-    f_s = F(MONO, 36)
+        y += 146
+    y += 26
+    f_s = F(MONO, 34)
     y = para(d, M, y, "Your computer draws a short film, frame by frame — "
                       "moonlit water, a drifting paper boat — and narrates "
                       "YOUR story with a free offline voice.", f_s, DIM,
@@ -157,6 +157,16 @@ def page_cover() -> Image.Image:
               "page 3.", f_p, DIM, W - 2 * M - 80, 1.55)
     d.rounded_rectangle([M, y0, W - M, yy + 34], radius=16, outline=AMBER,
                         width=3)
+    # expectation note — a starter slice, not the full studio
+    yb = yy + 54
+    d.text((M, yb), "A STARTER SLICE — not the full studio",
+           font=f_h, fill=GREEN)
+    yb += 46
+    para(d, M, yb,
+         "For experiencing the workflow, learning step by step. The "
+         "channel's films use the full system (page 4), so your renders "
+         "will look simpler — that's by design.",
+         F(MONO, 30), DIM, W - 2 * M, 1.45)
     footer(d, 1)
     return img
 
@@ -204,10 +214,11 @@ def page_steps() -> Image.Image:
     y = para(d, M + 70, y,
              "A memory. A bedtime story for your kid. Something you wish "
              "existed. Claude rewrites the screenplay file and your machine "
-             "renders it — same night world, your story. Or ask smaller:",
+             "renders it. If your story needs a night train or a city "
+             "skyline, Claude draws the new element too. Or ask smaller:",
              f_p, DIM, W - M - 180, 1.42)
     y += 12
-    for q in ['"Make it about a lighthouse keeper and his dog."',
+    for q in ['"Draw a night train for my father\'s story."',
               '"Let me hear the other narrator voices."',
               '"End at dawn instead."']:
         d.text((M + 70, y), "-", font=f_p, fill=GREEN)
@@ -269,22 +280,28 @@ def page_full_system() -> Image.Image:
     img, d = new_page()
     d.text((M, M), "THIS KIT IS A SLICE", font=F(ARCHIVO, 56), fill=INK)
     d.text((M, M + 78), "OF SOMETHING BIGGER", font=F(ARCHIVO, 56), fill=GREEN)
-    f_p = F(MONO, 32)
-    f_h = F(MONO_B, 34)
+    f_p = F(MONO, 31)
+    f_h = F(MONO_B, 33)
     y = M + 168
     y = para(d, M, y,
-             "This kit locks one visual world on purpose. The full "
-             "FramesFromCode pipeline — the one that renders the channel's "
-             "episodes — adds the layers that turn one look into a studio:",
+             "With this kit you can make as many films as you want — and "
+             "grow its night world with anything your story needs. The "
+             "pipeline behind the channel's episodes adds the craft that "
+             "makes a film feel directed:",
              f_p, DIM, W - 2 * M, 1.5)
     y += 22
     for name, desc in [
-        ("a style library", "many visual languages, each proven on screen"),
-        ("a directing layer", "cameras that breathe, staging, micro-events "
-                              "— where most of the craft lives"),
-        ("audio-first fitting", "every scene born fitting the narration"),
-        ("code-generated music", "score and sound beds, also $0"),
-        ("mastering & QC", "broadcast loudness, frame-level checks"),
+        ("the directing hand", "cameras that breathe and tremble, staging, "
+                               "micro-events — the film holds your viewer"),
+        ("a style library", "proven visual languages — no two films look "
+                            "alike"),
+        ("music born from code", "a score that knows your story and lands "
+                                 "on your biggest line"),
+        ("an audience compass", "topics from measured search demand, "
+                                "titles tested on live autocomplete — "
+                                "films people were already looking for"),
+        ("mastering & QC", "broadcast loudness, frame checks — sounds "
+                           "like TV"),
     ]:
         d.text((M, y), ">", font=f_h, fill=GREEN)
         d.text((M + 44, y), name, font=f_h, fill=INK)
@@ -293,31 +310,27 @@ def page_full_system() -> Image.Image:
         y += 6
     y += 14
     y = para(d, M, y,
-             "Everything above is taught free in the episodes — watch, "
-             "copy, build your own if you have the time.", f_p, DIM,
-             W - 2 * M, 1.42)
-    y += 10
-    y = para(d, M, y,
-             "For everyone else: a packaged, ready-to-run version of the "
-             "full pipeline is in the works. It saves you the research "
-             "hours, nothing more — every lesson in it was paid for in "
-             "failed renders, and its proof is the film that brought you "
-             "here. Grabbed this kit on Payhip? You're already on the "
-             "list. No income promises — tools, not dreams.", f_p, INK,
-             W - 2 * M, 1.38)
-    y += 24
-    # channel plate
-    d.rounded_rectangle([M, y, W - M, y + 176], radius=16, fill=PANEL,
+             "All of it is taught free in the episodes. For everyone "
+             "else: a packaged, ready-to-run version is in the works — "
+             "everything above, working for you one pasted sentence at "
+             "a time. It saves you the research hours, nothing more: "
+             "every lesson was paid for in failed renders, and its proof "
+             "is the film that brought you here. Grabbed this kit on "
+             "Payhip? You're already on the list. No income promises — "
+             "tools, not dreams.", f_p, INK, W - 2 * M, 1.38)
+    y += 16
+    # channel plate — single line
+    d.rounded_rectangle([M, y, W - M, y + 96], radius=16, fill=PANEL,
                         outline=LINE, width=2)
-    f_mark = F(MONO_B, 44)
+    f_mark = F(MONO_B, 40)
     xx = M + 50
-    d.text((xx, y + 30), "frames", font=f_mark, fill=INK)
+    d.text((xx, y + 26), "frames", font=f_mark, fill=INK)
     xx += d.textlength("frames", font=f_mark)
-    d.text((xx, y + 30), "from", font=f_mark, fill=DIM)
+    d.text((xx, y + 26), "from", font=f_mark, fill=DIM)
     xx += d.textlength("from", font=f_mark)
-    d.text((xx, y + 30), "code", font=f_mark, fill=GREEN)
-    cursor_block(d, xx + d.textlength("code", font=f_mark) + 16, y + 36, 44)
-    d.text((M + 50, y + 106), "youtube.com/@framesfromcode", font=F(MONO_B, 36),
+    d.text((xx, y + 26), "code", font=f_mark, fill=GREEN)
+    xx += d.textlength("code", font=f_mark) + 40
+    d.text((xx, y + 30), "youtube.com/@framesfromcode", font=F(MONO_B, 34),
            fill=CYAN)
     footer(d, 4)
     return img

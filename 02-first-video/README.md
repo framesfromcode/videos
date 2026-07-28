@@ -22,7 +22,8 @@ That's it. Claude Code will check your machine, install the free tools it
 needs (Python, FFmpeg, one offline text-to-speech model), render the sample
 film — and then ask for YOUR story. Tell it a memory, a bedtime story,
 anything: it rewrites the screenplay file and your machine renders your
-film. The visual style is locked on purpose; the story is yours.
+film. And if your story needs something the night world can't draw yet —
+a train, a skyline, falling snow — Claude draws the new element too.
 
 ## Doing it by hand instead
 
@@ -43,17 +44,21 @@ with the element list in `STYLE.md` and re-render.
 | File | What it is |
 |---|---|
 | `SKILL.md` | The instruction set Claude Code follows — the actual "skill" |
-| `first_film.py` | The film engine: one locked style, deterministic |
+| `first_film.py` | The film engine: night-poster world, deterministic, extendable |
 | `story.py` | The screenplay — scenes + narration. This is YOUR file |
-| `STYLE.md` | Every knob of the locked style + five craft rules |
+| `STYLE.md` | Every knob of the world + craft rules + how to extend it |
 | `get_tts.py` | One-time download of the free voice (Kokoro-82M, Apache-2.0) |
 | `VOICES.md` | The four preset narrator voices and how to audition them |
 | `fonts/` | SIL OFL 1.1 fonts (licenses included) |
 
-This kit is a working slice of the full pipeline the
+This kit is a **starter slice** of the full pipeline the
 [FramesFromCode](https://youtube.com/@framesfromcode) channel builds in
-public — the episodes show the layers this kit leaves out: multiple styles,
-the film-directing layer, code-generated music, mastering.
+public — made for experiencing the workflow and learning it step by step.
+The channel's films use the full system, so your renders will look
+simpler; that's the slice working as designed, not you failing. The
+episodes show the layers this kit leaves out: the film-directing layer
+(emotional cameras, staging, micro-events), the proven style library,
+code-generated music, mastering, and the audience-research side.
 
 License: MIT for the code · fonts SIL OFL 1.1 · voice model Apache-2.0.
 No email wall. Have fun, break it, make it yours.
