@@ -280,7 +280,7 @@ def page_full_system() -> Image.Image:
     img, d = new_page()
     d.text((M, M), "THIS KIT IS A SLICE", font=F(ARCHIVO, 56), fill=INK)
     d.text((M, M + 78), "OF SOMETHING BIGGER", font=F(ARCHIVO, 56), fill=GREEN)
-    f_p = F(MONO, 31)
+    f_p = F(MONO, 29)
     f_h = F(MONO_B, 33)
     y = M + 168
     y = para(d, M, y,
@@ -288,8 +288,8 @@ def page_full_system() -> Image.Image:
              "grow its night world with anything your story needs. The "
              "pipeline behind the channel's episodes adds the craft that "
              "makes a film feel directed:",
-             f_p, DIM, W - 2 * M, 1.5)
-    y += 22
+             f_p, DIM, W - 2 * M, 1.4)
+    y += 16
     for name, desc in [
         ("the directing hand", "cameras that breathe and tremble, staging, "
                                "micro-events — the film holds your viewer"),
@@ -306,9 +306,15 @@ def page_full_system() -> Image.Image:
         d.text((M, y), ">", font=f_h, fill=GREEN)
         d.text((M + 44, y), name, font=f_h, fill=INK)
         y += 44
-        y = para(d, M + 44, y, desc, f_p, DIM, W - 2 * M - 88, 1.38)
-        y += 6
-    y += 14
+        y = para(d, M + 44, y, desc, f_p, DIM, W - 2 * M - 88, 1.34)
+        y += 4
+    y += 12
+    y = para(d, M, y,
+             "Film is only the first lane — the same pipeline renders "
+             "explainers, data stories, science visuals: quieter niches, "
+             "lower barriers. More starter kits are on the way.",
+             f_p, DIM, W - 2 * M, 1.34)
+    y += 12
     y = para(d, M, y,
              "All of it is taught free in the episodes. For everyone "
              "else: a packaged, ready-to-run version is in the works — "
@@ -317,8 +323,8 @@ def page_full_system() -> Image.Image:
              "every lesson was paid for in failed renders, and its proof "
              "is the film that brought you here. Grabbed this kit on "
              "Payhip? You're already on the list. No income promises — "
-             "tools, not dreams.", f_p, INK, W - 2 * M, 1.38)
-    y += 16
+             "tools, not dreams.", f_p, INK, W - 2 * M, 1.34)
+    y += 14
     # channel plate — single line
     d.rounded_rectangle([M, y, W - M, y + 96], radius=16, fill=PANEL,
                         outline=LINE, width=2)
